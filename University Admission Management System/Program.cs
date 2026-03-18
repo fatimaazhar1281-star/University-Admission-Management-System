@@ -11,10 +11,10 @@ namespace University_Admission_Management_System
     // individual subjects
     class Subject
     {
-        public string code;
-        public int creditHours;
-        public string subjectType;
-        public int subjectFee;
+        public string code { get; set; }
+        public int creditHours { get; set; }
+        public string subjectType { get; set; }
+        public int subjectFee { get; set; }
 
         public Subject(string code, int creditHours, string subjectType, int subjectFee)
         {
@@ -28,10 +28,10 @@ namespace University_Admission_Management_System
     //  Degree Programs (e.g., CS, SE)
     class DegreeProgram
     {
-        public string title;
-        public int duration;
-        public int seats;
-        public List<Subject> subjects = new List<Subject>(); // Degree "has" many subjects
+        public string title { get; set; }
+        public int duration { get; set; }
+        public int seats { get; set; }
+        public List<Subject> subjects { get; set; } = new List<Subject>(); // Degree "has" many subjects
 
         public DegreeProgram(string title, int duration, int seats)
         {
@@ -57,14 +57,14 @@ namespace University_Admission_Management_System
     // Students applying to the university
     class Student
     {
-        public string name;
-        public int age;
-        public float fscMarks;
-        public float ecatMarks;
-        public float merit;
-        public List<DegreeProgram> preferences;                           // Student "prefers" certain degrees
-        public List<Subject> regSubjects = new List<Subject>();          // Subjects student actually takes
-        public DegreeProgram regDegree;                                 // The degree student actually gets admitted into
+        public string name { get; set; }
+        public int age { get; set; }
+        public float fscMarks { get; set; }
+        public float ecatMarks { get; set; }
+        public float merit { get; set; }
+        public List<DegreeProgram> preferences { get; set; }                          // Student "prefers" certain degrees
+        public List<Subject> regSubjects { get; set; } = new List<Subject>();          // Subjects student actually takes
+        public DegreeProgram regDegree { get; set; }                                // The degree student actually gets admitted into
 
         public Student(string name, int age, float fsc, float ecat, List<DegreeProgram> prefs)
         {
